@@ -100,6 +100,7 @@ set backspace=eol,start,indent " Configure backspace so it acts as it should act
 set whichwrap+=<,>,h,l " idem
 set lazyredraw " Don't redraw while executing macros (good performance config)
 set showmatch " Show matching brackets
+set showcmd " Show incomplete commands
 set mat=3 " How many tenths of a second to blink when matching brackets
 set encoding=utf8 " Set utf8 as standard encoding and en_US as the standard language
 set ffs=unix,dos,mac " Use Unix as the standard file type
@@ -191,6 +192,8 @@ nmap <silent> <A-Right> :wincmd l<CR>
 imap jj <Esc>
 " Map ctrl-W to next error
 nmap <C-W> :lnext<CR>
+" When in normal mode, press Space followed by the character that you want to insert.
+:nnoremap <Space> i_<Esc>r
 
 " *** Hacks
 " Strip trailing whitespace off all lines every time you save a .py or .pyx file
